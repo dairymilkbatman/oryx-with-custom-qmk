@@ -23,14 +23,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           KC_QUOTE,       KC_TRANSPARENT,
     KC_TRANSPARENT, KC_A,           KC_R,           KC_S,           KC_T,           KC_G,                                           KC_M,           KC_N,           KC_E,           KC_I,           KC_O,           KC_TRANSPARENT,
     KC_TRANSPARENT, KC_Z,           KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TAB,         KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_BSPC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_ESCAPE,      KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_BSPC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                     MO(1),          KC_LEFT_SHIFT,                                                  KC_SPACE,       MO(3)
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT,          KC_ESCAPE,      MAC_MISSION_CONTROL, KC_TRANSPARENT,   KC_TRANSPARENT, CW_TOGG,                        KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_CAPS,        KC_TRANSPARENT,
     KC_TRANSPARENT,          OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),  KC_RIGHT_ALT,                          KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_DELETE,      KC_TRANSPARENT,
-    KC_TRANSPARENT,          KC_PC_UNDO,     KC_PC_COPY,     KC_PC_CUT,      KC_RIGHT_GUI,   KC_PC_PASTE,                           KC_INSERT,      KC_TRANSPARENT, KC_TRANSPARENT, KC_APPLICATION, KC_PSCR,        KC_TRANSPARENT,
-    KC_TRANSPARENT,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TAB,         KC_TRANSPARENT,                        KC_TRANSPARENT, KC_BSPC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT,          KC_PC_UNDO,     KC_PC_COPY,     KC_PC_CUT,      KC_RIGHT_GUI,   KC_PC_PASTE,                           KC_INSERT,      KC_BSPC,        KC_TAB,         KC_APPLICATION, KC_PSCR,        KC_TRANSPARENT,
+    KC_TRANSPARENT,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_ESCAPE,      KC_TRANSPARENT,                        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                                 KC_ENTER,       QK_REPEAT_KEY
   ),
   [2] = LAYOUT_voyager(
