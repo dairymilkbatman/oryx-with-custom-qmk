@@ -9,6 +9,7 @@
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   MAC_MISSION_CONTROL,
+  SW_WIN = SAFE_RANGE,
 };
 
 
@@ -27,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     MO(1),          KC_LEFT_SHIFT,                                                  KC_SPACE,       MO(3)
   ),
   [1] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_ESCAPE,      MAC_MISSION_CONTROL, KC_WWW_BACK, KC_WWW_FORWARD, CW_TOGG,                                      KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_CAPS,        KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_ESCAPE,      SW_WIN,         KC_WWW_BACK,    KC_WWW_FORWARD, CW_TOGG,                                        KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_CAPS,        KC_TRANSPARENT,
     KC_TRANSPARENT, OSM(MOD_LSFT),  OSM(MOD_LCTL),  OSM(MOD_LALT),  OSM(MOD_LGUI),  KC_RIGHT_ALT,                                   KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_DELETE,      KC_TRANSPARENT,
     KC_TRANSPARENT, KC_UNDO,        KC_COPY,        KC_CUT,         KC_RIGHT_GUI,   KC_PASTE,                                       KC_INSERT,      KC_BSPC,        KC_TAB,         KC_APPLICATION, KC_PSCR,        KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_ESCAPE,      KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -55,6 +56,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_0,           KC_MINUS,                                                       KC_ENTER,       KC_TRANSPARENT
   ),
 };
+
+bool sw_win_active = false;
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
@@ -139,7 +142,12 @@ bool rgb_matrix_indicators_user(void) {
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
+    update_swapper(
+        &sw_win_active, KC_LGUI, KC_TAB, SW_WIN,
+        keycode, record
+    );
+
+    switch (keycode) {
     case MAC_MISSION_CONTROL:
       HCS(0x29F);
 
