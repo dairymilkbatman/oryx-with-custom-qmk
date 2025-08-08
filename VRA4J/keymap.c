@@ -6,10 +6,10 @@
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
 
-#define FWD G(S(KC_LBRC)) // Forward in history in browser
-#define BACK G(S(KC_RBRC)) // Back in history in browser
-#define TAB_L A(G(KC_LEFT)) // Tab left in browser
-#define TAB_R A(G(KC_RGHT)) // Tab right in browser
+#define TAB_L G(S(KC_LBRC)) //  Tab left in browser
+#define TAB_R G(S(KC_RBRC)) //  Tab right in browser
+#define FWD A(G(KC_LEFT)) // Forward in history in browser
+#define BACK A(G(KC_RGHT)) // Backward in history in browser
 
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     MO(1),          KC_LEFT_SHIFT,                                                  KC_SPACE,       MO(3)
   ),
   [1] = LAYOUT_voyager(
-    _______, KC_ESCAPE,      SW_WIN,         BACK,           FWD,            CW_TOGG,                                        KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_CAPS_LOCK,   _______,
+    _______, KC_ESCAPE,      SW_WIN,         TAB_L,          TAB_R,          CW_TOGG,                                        KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_CAPS_LOCK,   _______,
     _______, OSM(MOD_LSFT),  OSM(MOD_LCTL),  OSM(MOD_LALT),  OSM(MOD_LGUI),  KC_RIGHT_ALT,                                   KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_DELETE,      _______,
     _______, KC_UNDO,        KC_COPY,        KC_CUT,         KC_RIGHT_GUI,   KC_PASTE,                                       KC_INSERT,      KC_BSPC,        KC_TAB,         KC_APPLICATION, KC_PSCR,        _______,
     _______, _______,        _______,        _______,        KC_ESCAPE,      _______,                                        _______,        _______,        _______,        _______,        _______,        _______,
