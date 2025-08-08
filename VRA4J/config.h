@@ -1,5 +1,4 @@
 #define FLOW_TAP_TERM 90
-#define CHORDAL_HOLD
 #undef TAPPING_TERM
 #define TAPPING_TERM 180
 
@@ -10,7 +9,7 @@
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #define CAPS_LOCK_STATUS
-#define SERIAL_NUMBER "VRA4J/Ja433z"
+#define SERIAL_NUMBER "VRA4J/m5Owvm"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 2
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false
