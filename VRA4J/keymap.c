@@ -6,8 +6,8 @@
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
 
-#define FWD G(S(LC_LBRC)) // Forward in history in browser
-#define BACK G(S(LC_RBRC)) // Back in history in browser
+#define FWD G(S(KC_LBRC)) // Forward in history in browser
+#define BACK G(S(KC_RBRC)) // Back in history in browser
 #define TAB_L A(G(KC_LEFT)) // Tab left in browser
 #define TAB_R A(G(KC_RGHT)) // Tab right in browser
 
