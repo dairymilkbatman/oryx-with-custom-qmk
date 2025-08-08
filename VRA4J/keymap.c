@@ -1,16 +1,20 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
-#include "i18n.h"
-#define MOON_LED_LEVEL LED_LEVEL
 #include "swapper.h"
+#define MOON_LED_LEVEL LED_LEVEL
 #ifndef ZSA_SAFE_RANGE
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
 
+#define FWD G(S(LC_LBRC)) // Forward in history in browser
+#define BACK G(S(LC_RBRC)) // Back in history in browser
+#define TAB_L A(G(KC_LEFT)) // Tab left in browser
+#define TAB_R A(G(KC_RGHT)) // Tab right in browser
+
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   MAC_MISSION_CONTROL,
-  SW_WIN = SAFE_RANGE,
+  SW_WIN = SAFE_RANGE, // Switch to next window         (cmd-tab)
 };
 
 
@@ -29,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     MO(1),          KC_LEFT_SHIFT,                                                  KC_SPACE,       MO(3)
   ),
   [1] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_ESCAPE,      SW_WIN,         KC_WWW_BACK,    KC_WWW_FORWARD, CW_TOGG,                                        KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_CAPS,        KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_ESCAPE,      SW_WIN,         BACK,           FWD,            CW_TOGG,                                        KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_CAPS_LOCK,   KC_TRANSPARENT,
     KC_TRANSPARENT, OSM(MOD_LSFT),  OSM(MOD_LCTL),  OSM(MOD_LALT),  OSM(MOD_LGUI),  KC_RIGHT_ALT,                                   KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_DELETE,      KC_TRANSPARENT,
     KC_TRANSPARENT, KC_UNDO,        KC_COPY,        KC_CUT,         KC_RIGHT_GUI,   KC_PASTE,                                       KC_INSERT,      KC_BSPC,        KC_TAB,         KC_APPLICATION, KC_PSCR,        KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_ESCAPE,      KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
