@@ -5,14 +5,11 @@
 
 #define PERMISSIVE_HOLD
 
-<<<<<<< HEAD
 
 #define ONESHOT_TIMEOUT 5000
 
-=======
 #undef RGB_MATRIX_TIMEOUT
 #define RGB_MATRIX_TIMEOUT 240000
->>>>>>> origin/oryx
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #define CAPS_LOCK_STATUS
